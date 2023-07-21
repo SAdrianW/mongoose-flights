@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<h2>New Flight</h2>
+
+<form action="/flights/" method="POST">
+    <label>Airline</label>
+        <!-- <input type="text" name="airline"> -->
+        <select name="airline">
+            <!-- 'QANTAS', 'Virgin', 'Air Emerates', 'Singapore Airlines' -->
+            <option value="QANTAS">QANTAS</option>
+            <option value="Virgin">Virgin</option>
+            <option value="Air Emerates">Air Emerates</option>
+            <option value="Singapore Airlines">Singapore Airlines</option>
+            
+        </select>
+        <!-- <br><br> -->
+    <label>Airport</label>
+        <select name="airport">
+            <!-- 'MEL', 'SYD', 'SNG', 'LDN', 'PRS', 'LAX', 'Milan', 'Rome', 'Tokyo', 'Hawaii' -->
+            <option value="MEL">MEL</option>
+            <option value="SYD">SYD</option>
+            <option value="SNG">SNG</option>
+            <option value="LDN">LDN</option>
+            <option value="PRS">PRS</option>
+            <option value="LAX">LAX</option>
+        </select>
+        <!-- <<br><br> -->
+    <label>Flight No:</label>
+        <input type="number" name="flightNo">
+        <!-- <br><br> -->
+    <label>Departs</label>
+    <input type="datetime-local" name="departs"  value="<%= departsDate %>">
+    <button type="submit">Add Flight</button>
+</form>
+
+
+
+<%- include('../partials/footer') %>
