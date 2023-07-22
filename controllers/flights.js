@@ -3,12 +3,14 @@ const Flight = require('../models/flight');
 module.exports = {
     index,
     new: newFlight,
-    create
+    create,
+    show
 }
 
 async function index(req, res) {
     const flights = await Flight.find({});
     res.render('flights/index', {
+        title: 'Mongoose Flights List',
         flights
     })
 }
@@ -33,4 +35,9 @@ async function create(req, res) {
         console.log(err);
         res.redirect('/flights/new');
     }
+}
+
+async function show(req, res) {
+    const flight = await Flight.findById(req.params.id);
+    res.render('flights/show', { title: 'Flight Details', flight});
 }
