@@ -10,6 +10,7 @@ router.get('/new', flightsController.new);
 router.post('/', flightsController.create);
 // GET /flights/:id
 router.get('/:id', flightsController.show)
+// POST /flights/:id/destinations
 
 
 module.exports = router;

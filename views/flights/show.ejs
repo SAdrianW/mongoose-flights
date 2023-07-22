@@ -21,6 +21,49 @@
     
 </table>
 
+<h2>Destinations</h2>
 
+<form id="add-destination-form" method="POST"
+    action="/flights/<%= flight._id %>/destinations">
+    <label><h3>Destination:</h3></label>
+        <br>
+    <label>Airport:</label>
+        <select name="airport">
+            <!-- 'MEL', 'SYD', 'SNG', 'LDN', 'PRS', 'LAX', 'Milan', 'Rome', 'Tokyo', 'Hawaii' -->
+            <option value="MEL">MEL</option>
+            <option value="SYD">SYD</option>
+            <option value="SNG">SNG</option>
+            <option value="LDN">LDN</option>
+            <option value="PRS">PRS</option>
+            <option value="LAX">LAX</option>
+        </select>
+    
+    <label>Arrives:</label>
+    <input type="datetime-local" name="arrives"  value="">
+
+    <input type="submit" value="Add Destination">
+
+</form>
+
+<table>
+    <thead>
+        <h2>Destinations</h2>
+        <tr>
+            <!-- <th>Destination:</th> -->
+            <th>Airport:</th>
+            <th>Arrival Date:</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+            <tr>
+                <!-- <td><%= flight.airline %></td> -->
+                <td><%= flight.airport %></td>
+                <td><%= flight.departs %></td>
+
+            </tr>
+    </tbody>
+    
+</table>
 
 <%- include('../partials/footer') %>
