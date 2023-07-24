@@ -44,6 +44,9 @@
     <input type="submit" value="Add Destination">
 
 </form>
+<br>
+    
+    <a href="/flights/<%= flight._id %>/tickets/new"><button type="submit">New Ticket</button></a>
 
 <table>
     <thead>
@@ -69,5 +72,12 @@
                     <h5>No Recorded Destinations</h5>            
                 <% } %>
 </table>
+
+<div>Tickets:</div>
+<ul>
+  <%- ticket.map(t => 
+    `<li>${t.seat} <small>${t.price}</small></li>`
+  ).join('') %>
+</ul>
 
 <%- include('../partials/footer') %>
